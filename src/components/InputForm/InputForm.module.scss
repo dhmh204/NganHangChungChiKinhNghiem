@@ -1,0 +1,36 @@
+.wrapper {
+    position: relative; 
+    width: 100%;
+    margin-bottom: 16px; 
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: var(--width-input);
+    height: var(--height-input); 
+    padding: 1.2rem 2.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--color-border-gray);
+    outline: none;
+    font-size: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    padding-right: 4.5rem; 
+    background-color: transparent;
+
+    &:focus {
+        border-color: var(--primary); 
+    }
+}
+
+.icon {
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%); 
+    display: flex;
+    align-items: center;
+    color: var(--primary); 
+    pointer-events: none; 
+}

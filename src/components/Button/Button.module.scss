@@ -1,0 +1,16 @@
+.button {
+    background: var(--primary);
+    width: var(--width-input);
+    height: var(--height-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2.2rem;
+    border-radius: 1rem;
+}
+
+.linear{
+    background: linear-gradient(90deg, var(--purple-stops));
+}
