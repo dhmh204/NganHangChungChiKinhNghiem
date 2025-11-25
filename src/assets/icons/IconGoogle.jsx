@@ -1,6 +1,6 @@
 import React from 'react';
 
-function IconGoogle({ size = 24, className }) {
+function IconGoogle({ size = 24, className, onClick}) {
   return (
     <svg
       width={size}
@@ -9,6 +9,7 @@ function IconGoogle({ size = 24, className }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      onClick={onClick}
     >
       <path
         fillRule="evenodd"

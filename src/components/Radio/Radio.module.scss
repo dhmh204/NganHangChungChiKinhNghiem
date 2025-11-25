@@ -1,0 +1,54 @@
+.wrapper {
+    display: inline-flex;     
+    align-items: center;      
+    cursor: pointer;
+    margin-right: 3rem;
+    user-select: none;
+    position: relative;       
+}
+
+.input {
+    display: none;
+}
+
+.checkmark {
+    width: 2.2rem;              
+    height: 2.2rem;
+    border: 1px solid var(--color-border-gray);   
+    border-radius: 50%;
+    margin-right: 1.2rem;
+    
+    position: relative;      
+    box-sizing: border-box;   
+    flex-shrink: 0;           
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); 
+    
+    width: 1.2rem;            
+    height: 1.2rem;
+    background-color: var(--secondary);  
+    border-radius: 50%;
+    transition: transform 0.2s ease; 
+}
+
+
+.input:checked + .checkmark {
+    border-color: var(--secondary);
+}
+
+.input:checked + .checkmark::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1; 
+}

@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // Định nghĩa alias '@' trỏ đến thư mục 'src'
       '~': path.resolve(__dirname, './src'),
     },
   },

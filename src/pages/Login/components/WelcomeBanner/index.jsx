@@ -7,22 +7,27 @@ import images from "~/assets/images";
 
 const cx = classNames.bind(styles);
 
-function WelcomeBanner({ title, heading, contentBtn, isLogin }) {
+function WelcomeBanner({ title, heading, contentBtn, isLogin=true}) {
   return (
-    <div className={cx("panel", isLogin ? "login-panel" : "regís-panel")}>
-      <div className={cx("logo")}>
+    <div className={cx("panel", isLogin ? "login-panel" : "regis-panel")}>
+      <div className={cx("logo", isLogin ? "login-logo" : "regis-logo")}>
         <img src={images.logo} />
-        <IoArrowBack
+        {isLogin && <IoArrowBack
          size={50} 
          color="#5E5E5E" 
-         className={cx("btn-back")} />
+         className={cx("btn-back")} />}
       </div>
 
-      <div className={cx("content")}>
+      <div className={cx("content", isLogin ? "login-content" : "regis-content")}>
+          
+
         <div className={cx("heading")}>{heading}</div>
         <div className={cx("text")}>{title}</div>
         <div className={cx("btn")}>{contentBtn}</div>
+
+
       </div>
+      
     </div>
   );
 }

@@ -34,3 +34,29 @@
     color: var(--primary); 
     pointer-events: none; 
 }
+
+.with-icon{
+    padding-left: 4.5rem;
+}
+
+.large {
+    width: var(--width-input-regis);
+    height: var(--height-input-regis);
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;        
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-border-gray);       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;         
+    
+    &:hover {
+        color: #333; 
+    }
+}
