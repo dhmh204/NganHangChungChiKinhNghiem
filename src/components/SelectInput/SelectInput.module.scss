@@ -8,15 +8,17 @@
     height: var(--height-input-regis);
     transition: all 0.2s;
     width: var( --width-input-regis);
-
-    &:hover {
-        border-color: #ccc;
-    }
-
+margin-bottom: 16px;
     &.disabled {
         opacity: 0.6;
         cursor: not-allowed;
     }
+
+     &:focus{
+            border-color:var(--primary);
+
+    }
+  
 }
 
 
@@ -39,6 +41,7 @@
     z-index: 1;
     padding-left: 0.6rem;
     font-weight: 500;
+ 
 }
 
 .icon-right {

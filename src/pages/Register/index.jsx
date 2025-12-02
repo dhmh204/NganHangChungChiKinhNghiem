@@ -1,10 +1,8 @@
 import React from 'react'
 import classNames from 'classnames/bind';
 
-import images from "~/assets/images";
 import styles from './Register.module.scss';
 import AuthLayout from '../../layouts/AuthLayout';
-import WelcomeBanner from '../Login/components/WelcomeBanner';
 import { IoArrowBack } from 'react-icons/io5';
 import FormRegisForBussines from './components/FormRegisForBussines';
 
@@ -30,14 +28,6 @@ function Register() {
         rule={rule} 
         isRegister={true} />
      </AuthLayout>
-
-      <WelcomeBanner
-      title=' Nhập thông tin cá nhân của bạn và bắt đầu hành trình cùng chúng tôi!'
-      heading='Hello, Friend!'
-      contentBtn='Đăng nhập'
-      isLogin={false}
-    ></WelcomeBanner>
-
     </div>
   )
 }

@@ -1,83 +1,113 @@
-.panel {
-  flex: 1;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.login-panel{
-  background: linear-gradient(180deg, var(--purple-stops));
+$white: #ffffff;
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
   border-top-right-radius: 80rem;
 
+  z-index: 100;
+  &.active {
+    width: 65%;
+    transform: translateX(100%);
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 70rem;
+    .overlay {
+      transform: translateX(-50%);
+    }
+  }
 }
 
-.regis-panel{
+.overlay {
+  background: linear-gradient(180deg, var(--purple-stops));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #fff;
+  position: relative;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.register {
   background: linear-gradient(0deg, var(--purple-stops));
-  border-bottom-left-radius: 80rem;
-  flex-direction: column-reverse;
 }
 
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
 
+.overlay-left {
+  transform: translateX(-20%);
+}
 
+.overlay-right {
+  right: 0;
+
+  transform: translateX(0);
+
+  .content{
+    margin-right: 56rem;
+  }
+}
 
 .logo {
+  margin-top: 10rem;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  img {
-    width: 20%;
-  }
+  justify-content: center;
 }
 
-.regis-logo{
-  justify-content: flex-end;
-  flex: 1;
- img {
-    width: 20%;
-    height: 100%;
-    height: auto; 
-    object-fit: contain; 
-  }
+.regis-logo {
+ margin-right: 200px;
+  margin-bottom: 100px;
 }
-
 
 .btn-back {
-  border: var(--color-border-gray) solid 0.1rem;
-  padding: 1.3rem;
+  border: var(--white) solid 0.1rem;
+  padding: 1rem;
   border-radius: 1rem;
-  margin-top: 2.7rem;
   cursor: pointer;
 }
 
 .content {
-  color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-content{
   flex: 1;
-
-
-}
-
-.regis-content{
-  flex: 2;
-
+  margin-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
   font-size: 4.8rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .text {
   font-size: 2rem;
-  padding: 0  7.6rem ;
-  margin-top: 3.2rem;
-  margin-bottom: 2.3rem;
-  text-align: center;
-
+  padding: 0 4rem;
+  margin-bottom: 3rem;
+  line-height: 1.4;
 }
 
 .btn {
@@ -90,10 +120,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: var(--white) solid 0.1rem;
-}
-.login-panel {
-}
+  border: $white solid 0.1rem;
+  background: transparent;
+  color: $white;
+  transition: all 0.2s;
 
-.regís-panel {
+  &:hover {
+    background: $white;
+    color: var(--primary);
+  }
 }

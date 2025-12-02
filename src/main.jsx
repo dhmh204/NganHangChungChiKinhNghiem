@@ -11,14 +11,14 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
+import AuthPage from "./pages/Authentication/index.jsx";
+import Header from "./layouts/CandidateLayout/components/Header/index.jsx";
 
 // gõ rfce để viết nhanh component
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GlobalStyles>
-      <Register />
-        {/* <Login /> */}
-
+        <Header/>
     </GlobalStyles>
   </StrictMode>
 );

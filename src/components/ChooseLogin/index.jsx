@@ -8,7 +8,7 @@ import  IconGoogle from '~/assets/icons/IconGoogle';
 import styles from './ChooseLogin.module.scss';
 const cx = classNames.bind(styles);
 
-function ChooseLogin({ chooseLogin, handleChooseLogin, handleChangeRule, rule, isBusiness = false }) {
+function ChooseLogin({ chooseLogin, handleChooseLogin, handleChangeRule, rule, isBusiness = false, isRegisBGg=false}) {
   return (
      <div className={cx('choose-login')}>
            {

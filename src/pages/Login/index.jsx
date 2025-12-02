@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import WelcomeBanner from './components/WelcomeBanner';
 import AuthLayout from '../../layouts/AuthLayout';
+import { IoArrowBack } from 'react-icons/io5';
 
 const cx = classNames.bind(styles);
 function Login() {
@@ -14,11 +15,7 @@ function Login() {
 
   return (
     <div className={cx('wrapper')}>
-    <WelcomeBanner 
-      title=' Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin của bạn'
-      heading='Welcome back!'
-      contentBtn='Đăng ký'
-    ></WelcomeBanner>
+          
     <AuthLayout heading="đăng nhập" rule={rule} handleChangeRule={handleChangeRule} isRegister={false}>
      </AuthLayout>
     </div>

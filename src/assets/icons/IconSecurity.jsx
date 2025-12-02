@@ -3,6 +3,7 @@ import React from "react";
 function IconSecurity({ size = 24, className, color='#613DC1' }) {
   return (
     <svg
+    className={className}
       width={size}
       height={size}
       viewBox="0 0 23 23"

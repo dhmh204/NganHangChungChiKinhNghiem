@@ -1,0 +1,13 @@
+.policy-check {
+    max-width: var(--width-input);
+    font-size: 1.4rem;
+
+    &.large {
+    max-width: var(--width-input-regis);
+}
+
+}
+
+.checkbox {
+    margin: 10px;
+}
