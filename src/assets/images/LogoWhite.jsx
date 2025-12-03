@@ -1,10 +1,12 @@
 import React from "react";
 
-function LogoWhite() {
+function LogoWhite({width = 174, height = 116, className }) {
   return (
     <svg
-      width="174"
-      height="116"
+
+     className={className}
+      width={width}
+      height={height}
       viewBox="0 0 174 116"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

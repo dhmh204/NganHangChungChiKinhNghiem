@@ -13,12 +13,15 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import AuthPage from "./pages/Authentication/index.jsx";
 import Header from "./layouts/CandidateLayout/components/Header/index.jsx";
+import Footer from "./layouts/CandidateLayout/components/Header/Footer/index.jsx";
 
 // gõ rfce để viết nhanh component
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GlobalStyles>
+      {/* <AuthPage/> */}
         <Header/>
+        <Footer/>
     </GlobalStyles>
   </StrictMode>
 );

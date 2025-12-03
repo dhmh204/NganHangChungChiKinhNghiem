@@ -8,12 +8,16 @@
     --color-text-primary: #101A36;
     --body-light: #F4F2FC;
     --secondary: #5E5E5E;
+    --black: #000000;
+    --footer-bg-gradient: #613DC1 0%, #4D3098 49%, #2E1D5B 100%;
+
 
     --width-input: 44.1rem;
     --height-input: 5rem;
 
     --width-input-regis: 67.6rem;
     --height-input-regis: 5.4rem;
+
 
 }
 
@@ -66,6 +70,9 @@ a {
     text-decoration: none;
 }
 
+ul{
+    list-style: none;
+}
 
 // Custom tippy tooltip
 body {

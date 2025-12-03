@@ -1,10 +1,11 @@
 import React from "react";
 
-function LogoPurple() {
+function LogoPurple({ width = 103, height = 72, className }) {
   return (
     <svg
-      width="103"
-      height="72"
+    className={className}
+      width={width}
+      height={height}
       viewBox="0 0 103 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
