@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import styles from "./FormRegisForBussines.module.scss";
 import ChooseLogin from "~/components/ChooseLogin";
 import Regulations from "../Regulations";
-import Button from "../../../../components/Button";
+import Button from "~/components/Button";
 import TermAndPolicy from "~/components/TermAndPolicy";
 import AccountSection from "../AccountSection";
 import BusinessSection from "../BusinessSection";

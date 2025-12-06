@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./Auth.module.scss";
 
-import LoginForm from "~/pages/Login";
-import RegisterForm from "~/pages/Register";
-import WelcomeBanner from "../Login/components/WelcomeBanner"; // Import WelcomeBanner
+import LoginForm from "~/pages/Authentication/components/Login";
+import RegisterForm from "~/pages/Authentication/components/Register";
+import WelcomeBanner from "~/pages/Authentication/components/Login/WelcomeBanner";
 import { IoArrowBack } from "react-icons/io5";
 
 const cx = classNames.bind(styles);

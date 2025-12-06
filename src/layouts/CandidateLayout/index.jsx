@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { Children } from "react";
+import classNames from "classnames/bind";
 
-function CandidateLayout() {
+import styles from "./CandidateLayout.module.scss";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollToTop from "~/components/ScrollToTop";
+
+
+const cx = classNames.bind(styles);
+function CandidateLayout({children}) {
   return (
-    <div>CandidateLayout</div>
+   <div className={cx("wrapper")}>
+      <Header/>
+      {children}
+      <ScrollToTop/>
+      <Footer/>
+
+   </div>
   )
 }
 

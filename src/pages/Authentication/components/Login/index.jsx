@@ -1,9 +1,7 @@
 import React from 'react'
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
-import WelcomeBanner from './components/WelcomeBanner';
-import AuthLayout from '../../layouts/AuthLayout';
-import { IoArrowBack } from 'react-icons/io5';
+import AuthLayout from '~/layouts/AuthLayout';
 
 const cx = classNames.bind(styles);
 function Login() {
@@ -22,5 +20,5 @@ function Login() {
 
   )
 }
-
+ 
 export default Login

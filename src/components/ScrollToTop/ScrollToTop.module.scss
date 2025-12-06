@@ -1,0 +1,39 @@
+.scroll-btn {
+  position: fixed; 
+  bottom: 40px;    
+  right: 40px;    
+  z-index: 999;  
+  
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; 
+  
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.3s; 
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: var(--primary); 
+    color: var(--white);
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 16px rgba(97, 61, 193, 0.3);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

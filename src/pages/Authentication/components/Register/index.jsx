@@ -2,9 +2,9 @@ import React from 'react'
 import classNames from 'classnames/bind';
 
 import styles from './Register.module.scss';
-import AuthLayout from '../../layouts/AuthLayout';
+import AuthLayout from '~/layouts/AuthLayout';
 import { IoArrowBack } from 'react-icons/io5';
-import FormRegisForBussines from './components/FormRegisForBussines';
+import FormRegisForBussines from './FormRegisForBussines';
 
 
 const cx = classNames.bind(styles); 

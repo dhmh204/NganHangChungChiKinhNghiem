@@ -2,6 +2,9 @@
   background: linear-gradient(0deg, var(--purple-stops));
   color: var(--white);
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 100000;
   width: 80%;
   align-items: center;
   margin: 0 auto;
@@ -41,7 +44,7 @@
   color: #fff;
   text-decoration: none;
   user-select: none;
-  
+
   &:hover {
     color: var(--color-border-gray);
   }
@@ -59,8 +62,8 @@
 }
 
 .icon-link {
-    color: #fff;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
 }
