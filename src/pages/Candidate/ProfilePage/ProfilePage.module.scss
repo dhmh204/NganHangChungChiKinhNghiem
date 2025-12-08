@@ -1,0 +1,20 @@
+.container {
+    width: var(--width);
+    margin: 10px auto;
+    padding: 20px 15px;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 30px;
+    @media (max-width: 992px) {
+        flex-direction: column-reverse; 
+    }
+}
+
+.main-column {
+    flex: 1; 
+}
+
+.sidebar-column {
+    width: 350px;
+    flex-shrink: 0;
+}

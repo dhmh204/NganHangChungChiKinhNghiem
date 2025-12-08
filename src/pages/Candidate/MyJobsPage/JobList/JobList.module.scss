@@ -1,0 +1,17 @@
+.job-list {
+    display: flex;
+    flex-direction: column;
+    // gap: 16px; // Lưu ý: Nếu dùng gap ở đây thì AnimatePresence có thể hơi giật nhẹ, nên dùng margin-bottom ở item con (như trong JS) sẽ mượt hơn.
+    min-height: 200px; // Chiều cao tối thiểu để tránh layout bị nhảy khi load
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 12px;
+    color: #6B7280;
+    font-size: 14px;
+    border: 1px dashed #E5E7EB;
+    margin-top: 10px;
+}

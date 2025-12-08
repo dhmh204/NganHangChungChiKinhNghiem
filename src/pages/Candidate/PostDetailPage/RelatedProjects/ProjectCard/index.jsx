@@ -14,9 +14,9 @@ function ProjectCard({
   description,
   companyName,
   tags = [],
-  isFavorite = false}
+  isFavorite = false, 
+showApplyBtn = true}
 ){
-    console.log("title" , title)
   const avatarUrlDefault = `https://ui-avatars.com/api/?name=${encodeURIComponent(
     companyName
   )}&background=random&color=fff`;
@@ -50,9 +50,11 @@ function ProjectCard({
         </div>
 
         <div className={cx("buttons-group")}>
-          <button className={cx("btn", "primary")}>
-            <TbLocationFilled size={16} /> Nộp CV
-          </button>
+          {showApplyBtn && (
+            <button className={cx("btn", "primary")}>
+              <TbLocationFilled size={16} /> Nộp CV
+            </button>
+          )}
 
           <button className={cx("btn", "outline")}>
             <IoChatbubbleEllipsesOutline size={16} /> Giao tiếp

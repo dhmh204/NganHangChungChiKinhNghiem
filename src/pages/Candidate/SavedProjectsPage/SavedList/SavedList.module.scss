@@ -1,0 +1,19 @@
+.list-content {
+    min-height: 200px;
+}
+
+.list-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #6B7280;
+    font-size: 14px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px dashed #E5E7EB;
+}
