@@ -21,7 +21,7 @@ function ProjectCard({ srcImg, title, desc, location, date, company }) {
           <div className={cx("info")}>
             <div className={cx("title")}>{title}</div>
             <div className={cx("description")}>
-              {desc} ThènkjhsajfhsmanfjshafdjhThènkjhsajfhsmanfjshafdjhThènkjhsajfhsmanfjshafdjh
+              {desc}
             </div>
           </div>
           <div className={cx("icon-heart")} onClick={() => setIsLike(!isLike)}>

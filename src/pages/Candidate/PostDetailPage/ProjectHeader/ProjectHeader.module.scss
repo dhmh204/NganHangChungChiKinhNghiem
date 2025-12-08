@@ -1,0 +1,71 @@
+$text-color: #101a37;
+
+.wrapper {
+  background-color: var(--white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+
+.meta {
+  display: flex;
+  gap: 100px;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.icon {
+  width: 40px;
+  font-size: 25px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value {
+  font-weight: 700;
+}
+.action {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+
+
+}
+.btn-apply {
+    font-size: 16px;
+       font-weight: 400;
+
+
+    display: flex;
+    justify-content: center;
+}
+.btn-chat {
+    font-weight: 600;
+  cursor: pointer;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+}
+
+
+.icon-chat{
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}

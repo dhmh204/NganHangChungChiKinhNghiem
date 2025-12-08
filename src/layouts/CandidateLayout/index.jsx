@@ -8,9 +8,9 @@ import ScrollToTop from "~/components/ScrollToTop";
 
 
 const cx = classNames.bind(styles);
-function CandidateLayout({children}) {
+function CandidateLayout({children, className}) {
   return (
-   <div className={cx("wrapper")}>
+   <div className={cx("wrapper", className)}>
       <Header/>
       {children}
       <ScrollToTop/>

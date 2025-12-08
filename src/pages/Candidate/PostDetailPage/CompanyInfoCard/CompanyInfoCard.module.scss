@@ -1,0 +1,100 @@
+$text-color: #374151;
+
+.wrapper {
+  background-color: var(--white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.logo-box {
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); // Bóng đổ nhẹ cho logo nổi lên
+  }
+}
+
+.company-name {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1f2937;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #F4F2FC;
+  padding: 125px 10px 10px;
+  border-radius: 16px;
+  margin-top: 64px;
+}
+
+.info-item {
+  background-color: var(--white); 
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+  border-left: 2px solid var(--primary);
+
+  .icon-box {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0; 
+    background-color: var(--primary); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 16px;
+  }
+
+
+  .text {
+    font-size: 14px;
+    color: $text-color;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+
+  a.text {
+    color: $text-color;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+  }
+}

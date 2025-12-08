@@ -1,0 +1,30 @@
+$text-color: #101a37;
+
+.header {
+  display: flex;
+  color: $text-color;
+  padding-left: 20px;
+  border-left: 3px solid var(--primary);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.title {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+  &::first-letter{
+    text-transform: uppercase;
+  }
+}
+.icon-heart {
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+
+.icon{
+  font-size: 20px;
+}

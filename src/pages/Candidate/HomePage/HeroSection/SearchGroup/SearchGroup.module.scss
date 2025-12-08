@@ -1,6 +1,6 @@
 .search-bar-wrapper {
     position: relative; 
-    width: 65%;
+    width: calc(var(--width) - 5%);
     font-family: Arial, sans-serif;
 }
 

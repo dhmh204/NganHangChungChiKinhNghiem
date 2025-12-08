@@ -1,0 +1,17 @@
+$text-color: #101a37;
+
+.wrapper {
+  background-color: var(--white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+}

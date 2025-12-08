@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
-function Button({isLinear=false, text, onClick, className, large=false}) {
+function Button({isLinear=false, text, onClick, className, large=false, icon}) {
   return (
     <div className={cx(className, 
       'button', {
@@ -11,7 +11,7 @@ function Button({isLinear=false, text, onClick, className, large=false}) {
         'large': large
       }
       
-    )}>{text}</div>
+    )}><span className={cx("icon")}>{icon}</span> {text}</div>
   )
 }
 
