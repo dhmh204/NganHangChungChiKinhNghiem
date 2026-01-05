@@ -1,0 +1,125 @@
+$curve-size: 2rem;
+
+.sidebar {
+    width: 26rem; 
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+    
+    background: linear-gradient(180deg, var(--purple-stops));
+    
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    z-index: 100;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    .logo-symbol {
+        width: 12rem;
+        height: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        }
+}
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1.5rem;
+    flex: 1;
+}
+
+
+.menu-item-wrapper {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 0.2rem;
+}
+
+.active-background {
+    position: absolute;
+    inset: 0; 
+    background-color: var(--body-light); 
+    z-index: 0; 
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -$curve-size;
+        width: $curve-size;
+        height: $curve-size;
+        background: transparent;
+        border-bottom-right-radius: 50%;
+        box-shadow: 0.5rem 0.5rem 0 0.5rem var(--body-light);
+        pointer-events: none;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -$curve-size;
+        width: $curve-size;
+        height: $curve-size;
+        background: transparent;
+        border-top-right-radius: 50%;
+        box-shadow: 0.5rem -0.5rem 0 0.5rem var(--body-light);
+        pointer-events: none;
+    }
+}
+
+.item-content {
+    position: relative;
+    z-index: 1; 
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.6rem 2.4rem;
+    
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+
+    .icon {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+         svg{
+        color: var(--white) !important;}
+
+
+    }
+
+    &.active {
+        color: var(--color-text-primary);
+        font-weight: 700;
+        .icon svg{
+        color: var(--color-text-primary) !important;
+
+
+        }
+    }
+}
+
+.menu-item-wrapper:not(:has(.active-background)) .item-content:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}

@@ -30,7 +30,7 @@ const NOTIFICATIONS_DATA = [
   },
 ];
 
-function NotificationMenu() {
+function NotificationMenu({isRecruiterLayout=false}) {
   const [showNotifications, setShowNotifications] = useState(false);
   const notiRef = useRef(null);
 
@@ -49,16 +49,26 @@ function NotificationMenu() {
   return (
     <div ref={notiRef} className={cx("notification-container")}>
       <a
-        className={cx("btn-icon")}
+        className={cx("btn-icon", 
+          {"icon-recruiter": isRecruiterLayout}
+        )}
         onClick={() => setShowNotifications(!showNotifications)}
       >
         <FaRegBell />
-        <span className={cx("badge")}>1</span>
+        <span className={cx("badge", {
+          "badge-recruiter": isRecruiterLayout
+        })}>1</span>
       </a>
 
       {showNotifications && (
-        <div className={cx("dropdown-menu")}>
-          <div className={cx("dropdown-beak")}></div>
+        <div className={cx("dropdown-menu",    {
+          "dropdown-menu-recruiter": isRecruiterLayout
+        })}>
+          <div className={cx("dropdown-beak", 
+            {
+          "dropdown-beak-recruiter": isRecruiterLayout
+        }
+          )}></div>
 
           <div className={cx("dropdown-content")}>
             <div className={cx("header")}>

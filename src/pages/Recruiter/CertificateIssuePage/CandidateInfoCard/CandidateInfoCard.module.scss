@@ -1,0 +1,55 @@
+.info-card {
+  background: #fff;
+  border-radius: 1.6rem;
+  padding: 2.4rem;
+  text-align: center;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
+  border: 0.1rem solid #e5e7eb;
+  margin-bottom: 2rem;
+
+  .card-avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.6rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    color: #6b7280;
+    .highlight {
+      color: #fbbf24;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  }
+}
+.banner {
+  background: #fff;
+  border-radius: 1.6rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #e5e7eb;
+  letter-spacing: 0.2rem;
+  border: 0.1rem solid #e5e7eb;
+}

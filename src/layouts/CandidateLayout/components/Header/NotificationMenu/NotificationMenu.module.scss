@@ -14,6 +14,14 @@
   font-size: 24px;
 }
 
+.icon-recruiter {
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 10px;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.15);
+
+}
+
 .badge {
   position: absolute;
   top: -8px;
@@ -33,19 +41,32 @@
   box-sizing: content-box;
 }
 
+.badge-recruiter{
+  min-width: 12px;
+    height: 12px;
+    top: -8px;
+    right: -7px;
+}
+
 .dropdown-menu {
   position: absolute;
-top: 214%;
+  top: 214%;
   left: -320px;
   width: 363px;
   z-index: 1000;
   padding-top: 12px;
+  animation: slideDown 0.2s ease-out;
+
 }
 
+.dropdown-menu-recruiter{
+      top: 118%;
+    left: -306px;
+}
 .dropdown-beak {
   position: absolute;
   top: 4px;
-  right: 18px; 
+  right: 18px;
   transform: rotate(45deg);
   width: 16px;
   height: 16px;
@@ -54,6 +75,7 @@ top: 214%;
   border-left: 1px solid #e5e7eb;
   z-index: 1001;
 }
+
 
 .dropdown-content {
   background-color: #ffffff;
@@ -161,4 +183,16 @@ top: 214%;
 .notification-item-time {
   font-size: 12px;
   color: #999;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

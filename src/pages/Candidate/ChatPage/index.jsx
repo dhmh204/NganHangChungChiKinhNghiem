@@ -59,7 +59,6 @@ function ChatPage() {
   const currentChat = conversations.find((c) => c.id === activeChatId);
   return (
     <div className={cx("chat-page")}>
-      <CandidateLayout>
         <div className={cx("container")}>
       <Sidebar 
         conversations={conversations}
@@ -72,7 +71,6 @@ function ChatPage() {
         messages={messages}
       />
     </div>
-      </CandidateLayout>
     </div>
   );
 }

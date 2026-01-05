@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
 import { FaRegBookmark } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom"; 
 
 import LogoWhite from "~/assets/images/LogoWhite";
 import styles from "./Header.module.scss";
@@ -15,28 +16,43 @@ function Header() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("logo")}>
-        <LogoWhite width={70} height={47} />
+        <Link to="/">
+          <LogoWhite width={70} height={47} />
+        </Link>
       </div>
 
       <div className={cx("nav")}>
         <ul className={cx("nav-content")}>
+          
           <li className={cx("nav-item", "nav-link")}>
             <ProjectMenu />
           </li>
+
           <li>
-            <a href="/" className={cx("nav-link")}>
+            <NavLink 
+              to="/profile" 
+              className={({ isActive }) => cx("nav-link", { active: isActive })}
+            >
               Quản lý CV
-            </a>
+            </NavLink>
           </li>
+
           <li>
-            <a href="/" className={cx("nav-link")}>
+            <NavLink 
+              to="/certificates" 
+              className={({ isActive }) => cx("nav-link", { active: isActive })}
+            >
               Quản lý chứng chỉ
-            </a>
+            </NavLink>
           </li>
+
           <li>
-            <a href="/" className={cx("nav-link")}>
+            <NavLink 
+              to="/profile" 
+              className={({ isActive }) => cx("nav-link", { active: isActive })}
+            >
               Quản lý thông tin cá nhân
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -44,13 +60,19 @@ function Header() {
       <div className={cx("action")}>
         <ul className={cx("list-icon")}>
           <li>
-            <a href="/" title="Saved" className={cx("icon-link")}>
+            <NavLink 
+                to="/saved-projects" 
+                title="Đã lưu" 
+                className={({ isActive }) => cx("icon-link", { active: isActive })}
+            >
               <FaRegBookmark />
-            </a>
+            </NavLink>
           </li>
+          
           <li>
             <NotificationMenu />
           </li>
+          
           <li>
             <ProfileMenu />
           </li>

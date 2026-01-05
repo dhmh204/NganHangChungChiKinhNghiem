@@ -17,18 +17,16 @@ import MyJobsPage from "./pages/Candidate/MyJobsPage/index.jsx";
 import ProfilePage from "./pages/Candidate/ProfilePage/index.jsx";
 import SavedProjectsPage from "~/pages/Candidate/SavedProjectsPage/index.jsx";
 import CertificatePage from "./pages/Candidate/CertificatePage/index.jsx";
+import RecruiterLayout from "./layouts/RecruiterLayout/index.jsx";
+import { BrowserRouter } from "react-router-dom";
+import ProjectManagementPage from "./pages/Recruiter/ProjectManagementPage/index.jsx";
+import App from "../App.jsx";
 
 // gõ rfce để viết nhanh component
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GlobalStyles>
-      {/* <PostDetailPage /> */}
-      {/* <HomePage/> */}
-      {/* <ChatPage/> */}
-      {/* <MyJobsPage/> */}
-      {/* <ProfilePage/> */}
-{/* <SavedProjectsPage/> */}
-<CertificatePage/>
+      <App/>
     </GlobalStyles>
   </StrictMode>
 );

@@ -1,6 +1,7 @@
 import React from "react";
 
 function IconBuilding({ size = 24, className, color='#613DC1' }) {
+  const styleProps = color ? { color } : {};
   return (
     <svg
       className={className}

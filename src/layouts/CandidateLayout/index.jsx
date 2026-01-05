@@ -5,14 +5,17 @@ import styles from "./CandidateLayout.module.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "~/components/ScrollToTop";
+import { Outlet } from "react-router-dom";
 
 
 const cx = classNames.bind(styles);
-function CandidateLayout({children, className}) {
+function CandidateLayout({ className}) {
   return (
    <div className={cx("wrapper", className)}>
       <Header/>
-      {children}
+     <div className={cx("content")}>
+          <Outlet />
+      </div>
       <ScrollToTop/>
       <Footer/>
 

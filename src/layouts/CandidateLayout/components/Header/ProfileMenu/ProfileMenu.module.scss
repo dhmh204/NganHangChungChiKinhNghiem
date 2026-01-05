@@ -25,6 +25,8 @@
   z-index: 999;
   min-width: 250px;
   padding-top: 10px;
+  animation: slideDown 0.2s ease-out;
+
 }
 
 .dropdown-beak {
@@ -88,4 +90,16 @@
   width: 100%;
   margin-top: 8px;
   font-size: 14px;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

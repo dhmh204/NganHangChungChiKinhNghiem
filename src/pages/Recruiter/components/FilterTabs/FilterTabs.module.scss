@@ -1,0 +1,100 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.tabs-list {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: var(--white);
+    border: 0.1rem solid transparent;
+    border-radius: 2rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.05);
+
+    .count {
+        background: var(--light-gray);
+        color: var(--white);
+        font-size: 1.1rem;
+        padding: 0.2rem 0.8rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        transition: background 0.2s;
+    }
+
+    &:hover {
+        background-color: var(--primary);
+        color: var(--white);
+        .count {
+            background: var(--white);
+            color: red;
+        }
+    }
+
+    &.active {
+        background: var(--white);
+        color: var(--color-text-primary);
+        border-color: var(--light-gray);
+        font-weight: 700;
+
+        .count {
+            background: var(--secondary);
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 0.1rem solid var(--primary);
+    
+    &:hover {
+        background-color: var(--light-purple);
+    }
+}
+
+.btn-filled {
+    background: var(--light-purple);
+    color: var(--primary);
+    border: 0.1rem solid transparent;
+    
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+    }
+}

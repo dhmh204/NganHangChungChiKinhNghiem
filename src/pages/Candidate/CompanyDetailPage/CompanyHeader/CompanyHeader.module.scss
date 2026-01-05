@@ -1,0 +1,103 @@
+.wrapper {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.cover-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--light-purple);
+}
+
+.content {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    position: relative;
+    margin-top: -60px;
+}
+
+.logo-box {
+    width: 160px;
+    height: 160px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+}
+
+.info-box {
+    flex: 1;
+    padding-top: 70px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.btn-follow {
+    background: var(--light-purple);
+    color: var(--primary);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+        background: var(--primary);
+        color: var(--white);
+    }
+}
+
+.meta-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    color: var(--secondary);
+    align-items: center;
+    
+    a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}
+
+.icon {
+    margin-right: 6px;
+    color: var(--primary);
+}

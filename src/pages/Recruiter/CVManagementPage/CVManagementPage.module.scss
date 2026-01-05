@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+
+  .result-count {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .btn-download-all {
+    background: #fff;
+    border: 1px solid #f3e8ff;
+    border-radius: 2rem;
+    padding: 0.8rem 1.6rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background: #f3e8ff;
+    }
+  }
+}

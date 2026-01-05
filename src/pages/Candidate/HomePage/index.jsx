@@ -10,11 +10,9 @@ const cx = classNames.bind(styles);
 function HomePage() {
   return (
     <div className={cx("homePage")}>
-      <CandidateLayout>
         <HeroSection />
         <FeaturedProjects/>
         <FeaturedCompany/>
-      </CandidateLayout>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react' // hoặc plugin vue tuỳ dự án
+import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
@@ -7,6 +7,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '~': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    proxy: {
+      '/job-portal/api': {
+        target: 'https://my-springboot-jobportal.onrender.com',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 })

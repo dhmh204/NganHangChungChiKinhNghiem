@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  background-color: var(--body-light);
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: 26rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 7rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 4rem;
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    span {
+      font-weight: 600;
+      color: #64748b;
+      font-size: 1.4rem;
+    }
+    .avatar {
+      width: 4rem;
+      height: 4rem;
+      background: #a855f7;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.body {
+  padding: 2rem 4rem;
+}

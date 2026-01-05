@@ -1,0 +1,91 @@
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-box {
+  text-align: center;
+  .avatar-circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.6rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .badge {
+    background: #d1fae5;
+    color: #059669;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+.stars-container {
+  margin-top: 1rem;
+}
+.stars-display-wrapper {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.star-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+.star-bg {
+  color: #e5e7eb;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.star-fill {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+}
+.star-fg {
+  color: #fbbf24;
+}
+
+.actions-center {
+  margin-top: 3rem;
+}
+.btn-finish {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}

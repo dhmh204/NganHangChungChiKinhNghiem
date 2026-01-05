@@ -1,0 +1,61 @@
+.step-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 1rem;
+}
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111;
+  cursor: default;
+
+  .label {
+    text-align: right;
+  }
+
+  .dot {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 0.2rem solid #d1d5db;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 2;
+  }
+
+  &.active {
+    .dot {
+      border-color: var(--primary);
+      background: var(--white);
+    }
+    .dot::after {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+  }
+  &.completed {
+    .dot {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+  }
+}
+.line {
+  width: 0.2rem;
+  height: 6rem;
+  background: #e5e7eb;
+  margin-right: 1.1rem;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}

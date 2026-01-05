@@ -1,0 +1,149 @@
+
+
+.container {
+    margin: 0 auto;
+    padding: 2rem 0 4rem; 
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: var(--white);
+    width: 100%;
+    border-radius: 1.6rem;
+    padding: 3rem 4rem;
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.05);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1.6rem;
+}
+
+.divider {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #E5E7EB; 
+    border-top: 0.1rem dashed #D1D5DB; 
+    background: transparent;
+    margin-bottom: 3rem;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.avatar-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.2rem solid #F3F4F6;
+}
+
+.btn-camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: var(--primary); 
+    color: #fff;
+    border: 0.2rem solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+        background: var(--primary);
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #111;
+    }
+
+    input {
+        width: 100%;
+        padding: 1.2rem 1.6rem;
+        border: 0.1rem solid #E5E7EB;
+        border-radius: 0.6rem;
+        font-size: 1.4rem;
+        color: #374151;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus {
+            border-color: var(--primary);
+        }
+        &::placeholder {
+            color: #9CA3AF;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 1.6rem;
+    margin-top: 2rem;
+}
+
+.btn-cancel {
+    background: #fff;
+    color: var(--primary)A; 
+    border: 0.1rem solid #E9D5FF;
+    padding: 1rem 3.2rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background: #FAF5FF;
+    }
+}
+
+.btn-save {
+    background: var(--primary); 
+    color: #fff;
+    border: none;
+    padding: 1rem 4rem; 
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}

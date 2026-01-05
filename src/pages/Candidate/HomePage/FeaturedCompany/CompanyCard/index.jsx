@@ -7,13 +7,13 @@ import styles from "./CompanyCard.module.scss";
 
 const cx = classNames.bind(styles);
 
-function CompanyCard({ company, image, location, specialized, totalPrj}) {
+function CompanyCard({ company, image, location, specialized, totalPrj, onClick}) {
   const [isLike, setIsLike] = useState(false);
   const avatarUrlDefault = `https://ui-avatars.com/api/?name=${encodeURIComponent(
     company
   )}&background=random&color=fff`;
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper")} onClick={onClick}>
       <div className={cx("main-content")}>
         <div className={cx("header")}>
           <img className={cx("avatar")} src={image || avatarUrlDefault}></img>

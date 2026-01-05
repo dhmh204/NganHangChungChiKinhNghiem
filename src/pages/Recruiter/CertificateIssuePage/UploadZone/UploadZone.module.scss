@@ -1,0 +1,90 @@
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-zone {
+  flex: 1;
+  border: 0.2rem dashed #9ca3af;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+  background: #fafafa;
+  min-height: 30rem;
+
+  .icon-cloud {
+    font-size: 5rem;
+    color: #4b5563;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+  }
+  p {
+    font-size: 1.3rem;
+    color: #6b7280;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 3.2rem;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.file-preview {
+  text-align: center;
+  .filename {
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1rem 0;
+    font-size: 1.4rem;
+  }
+  .btn-reupload {
+    background: transparent;
+    border: 0.1rem solid #d1d5db;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+}
+
+.actions-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 2.8rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:disabled {
+    background: #e5e7eb;
+    cursor: not-allowed;
+  }
+}

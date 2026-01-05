@@ -1,45 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
+import { useNavigate } from "react-router-dom";
+
 import styles from "./RelatedProjects.module.scss";
-import HeaderSection from "../HeaderSection";
 import ProjectCard from "./ProjectCard"; 
+import * as jobPostService from "~/services/jobPostService"; 
 
 const cx = classNames.bind(styles);
 
-function RelatedProjects() {
-  const projects = [
-    {
-      id: 1,
-      title: "Software Engineer",
-      description: "Thiết kế trang web sàn thương mại với các chức năng thanh toán...",
-      companyName: "CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SUNTECH",
-      tags: ["Còn 20 ngày ứng tuyển", "Hà Nội"],
-      isFavorite: false,
-    },
-    {
-      id: 2,
-      title: "React Native Developer",
-      description: "Phát triển ứng dụng Mobile App trên nền tảng Android/iOS...",
-      companyName: "FPT Software",
-      tags: ["Còn 5 ngày", "Hồ Chí Minh"],
-      isFavorite: true,
-    }
-  ];
+function RelatedProjects({ companyId, posId, currentJobId }) {
+  const [relatedPosts, setRelatedPosts] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchRelated = async () => {
+      if (!companyId && !posId) return;
+
+      try {
+        const [resCompany, resPosition] = await Promise.all([
+          companyId ? jobPostService.getJobPostsByCompany(companyId) : [],
+          posId ? jobPostService.getJobPostsByPosition(posId) : []
+        ]);
+
+        const normalize = (res) => (Array.isArray(res) ? res : res?.data || []);
+        const listByCompany = normalize(resCompany);
+        const listByPosition = normalize(resPosition);
+
+        const combinedList = [...listByCompany, ...listByPosition];
+        const uniquePostsMap = new Map();
+
+        combinedList.forEach(item => {
+          if (item.jobId !== currentJobId) {
+             uniquePostsMap.set(item.jobId, item);
+          }
+        });
+
+        const finalResult = Array.from(uniquePostsMap.values());
+        setRelatedPosts(finalResult.slice(0, 6)); 
+
+      } catch (error) {
+        console.error("Lỗi tải dự án liên quan:", error);
+      }
+    };
+
+    fetchRelated();
+  }, [companyId, posId, currentJobId]);
+
+  const handleCardClick = (id) => {
+    navigate(`/posts/${id}`);
+    window.scrollTo(0, 0);
+  };
+
+  if (relatedPosts.length === 0) return null;
 
   return (
     <div className={cx("wrapper")}>
-      <HeaderSection title="Các dự án liên quan" />
+      <h3 className={cx("heading")}>Dự án liên quan</h3>
       
       <div className={cx("list")}>
-        {projects.map((item) => (
-          <ProjectCard
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            companyName={item.companyName}
-            tags={item.tags}
-            isFavorite={item.isFavorite}
-          />
+        {relatedPosts.map((item) => (
+          
+          <div key={item.jobId} onClick={() => handleCardClick(item.jobId)} style={{ cursor: "pointer" }}>
+            
+            <ProjectCard
+              logo={item.logoUrl || item.thumbnailUrl}
+
+              title={item.jobTitle}
+
+              companyName={item.legalName || item.companyName || "Công ty ẩn danh"}
+
+              description={item.jobDescription}
+
+              tags={[
+                  item.provinceAddress || "Toàn quốc",
+                  "Full-time" 
+              ]}
+              
+              isFavorite={false}
+              showApplyBtn={true}
+            />
+          </div>
+
         ))}
       </div>
     </div>

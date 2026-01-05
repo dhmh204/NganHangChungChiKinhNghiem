@@ -1,88 +1,91 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames/bind";
 import styles from "./CategorySidebar.module.scss";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
 import BannerImg from "~/assets/images/bannerHomePage.png"; 
 import IconClipboardList from "~/assets/icons/IconClipboardList"; 
 
 import PaginationControl from "~/components/PaginationControl"; 
-
 import { usePagination } from "~/hook/usePagination"; 
 
+import * as categoryService from "~/services/categoryService";
+
 const cx = classNames.bind(styles);
-
-const ALL_CATEGORIES = [
-  { id: 1, name: "Kỹ thuật phần mềm", subItems: ["Software Engineer", "BackEnd", "FrontEnd", "FullStack"] },
-  { id: 2, name: "Kiểm thử phần mềm", subItems: ["Tester", "QC", "QA", "Automation Test"] },
-  { id: 3, name: "Trí tuệ nhân tạo (AI)", subItems: ["AI Engineer", "NLP", "Computer Vision"] },
-  { id: 4, name: "Khoa học dữ liệu", subItems: ["Data Analyst", "Data Scientist", "Data Engineer"] },
-  { id: 5, name: "Hạ tầng & Vận hành", subItems: ["DevOps", "SysAdmin", "Cloud Architect"] },
-  { id: 6, name: "An toàn thông tin", subItems: ["Security Analyst", "Penetration Tester"] },
-  { id: 7, name: "Thiết kế (UI/UX)", subItems: ["UI Designer", "UX Researcher", "Graphic Designer"] },
-  { id: 8, name: "Quản lý sản phẩm", subItems: ["Product Manager", "Product Owner", "Business Analyst"] },
-  { id: 9, name: "Marketing Online", subItems: ["Digital Marketer", "SEO Specialist", "Content Creator"] },
-  { id: 10, name: "Bán hàng (Sales)", subItems: ["Sales Executive", "Account Manager"] },
-  { id: 11, name: "Hành chính nhân sự", subItems: ["HR Recruiter", "C&B", "Admin"] },
-  { id: 12, name: "Tài chính kế toán", subItems: ["Accountant", "Auditor"] },
-  { id: 13, name: "Biên phiên dịch", subItems: ["Japanese Translator", "English Translator"] },
-  { id: 14, name: "Giáo dục đào tạo", subItems: ["Teacher", "Trainer"] },
-  { id: 15, name: "Khác", subItems: ["Freelancer", "Part-time"] },
-];
-
 const ITEMS_PER_PAGE = 5;
 const today = new Date().toLocaleDateString('vi-VN');
 
 function CategorySidebar() {
+  const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const { currentData, pagination } = usePagination(ALL_CATEGORIES, ITEMS_PER_PAGE);
-  
-  const { currentPage, totalPages, onNext, onPrev } = pagination;
+  useEffect(() => {
+    const fetchApi = async () => {
+      setLoading(true);
+      const result = await categoryService.getAllCategories();
+      setCategories(result || []);
+      setLoading(false);
+    };
+
+    fetchApi();
+  }, []);
+
+  const { currentData, pagination } = usePagination(categories, ITEMS_PER_PAGE);
+  const { currentPage, totalPages, onNext, onPrev } = pagination; 
 
   const handleCategoryClick = (id) => {
     setActiveCategory(activeCategory === id ? null : id);
   };
 
-  const handlePageChange = (callback) => {
-    callback();
-    setActiveCategory(null); 
-  };
-
+  
+  
   return (
     <div className={cx("wrapper")}>
       <div className={cx("sidebar")}>
-        <ul className={cx("menu-list")}>
-          
-          {currentData.map((item) => (
-            <li key={item.id} className={cx("menu-item")}>
-              <div
-                className={cx("item-link", {
-                  active: activeCategory === item.id,
-                })}
-                onClick={() => handleCategoryClick(item.id)}
-              >
-                <span className={cx("item-text")}>{item.name}</span>
-                <MdArrowForwardIos size={16} className={cx("arrow-icon")} />
-              </div>
+        
+        {loading && <div className={cx("loading")}>Đang tải danh mục...</div>}
 
-              {activeCategory === item.id && (
-                <div className={cx("sub-menu")}>
-                  <h4 className={cx("sub-title")}>{item.name}</h4>
-                  <div className={cx("tag-container")}>
-                    {item.subItems.map((sub, index) => (
-                      <span key={index} className={cx("tag")}>
-                        {sub}
-                      </span>
-                    ))}
-                  </div>
+        {!loading && (
+            <ul className={cx("menu-list")}>
+            {currentData.map((item) => (
+                <li key={item.id} className={cx("menu-item")}>
+                <div
+                    className={cx("item-link", {
+                    active: activeCategory === item.id,
+                    })}
+                    onClick={() => handleCategoryClick(item.id)}
+                >
+                    <span className={cx("item-text")}>{item.name}</span>
+                    <MdArrowForwardIos size={16} className={cx("arrow-icon")} />
                 </div>
-              )}
-            </li>
-          ))}
-        </ul>
-          <PaginationControl 
-            variant="table"
-          {...pagination}/>
+
+                {activeCategory === item.id && (
+                    <div className={cx("sub-menu")}>
+                    <h4 className={cx("sub-title")}>{item.name}</h4>
+                    <div className={cx("tag-container")}>
+                        {item.positions && item.positions.length > 0 ? (
+                            item.positions.map((pos) => (
+                            <span key={pos.id} className={cx("tag")}>
+                                {pos.name}
+                            </span>
+                            ))
+                        ) : (
+                            <span className={cx("no-data")}>Chưa có vị trí nào</span>
+                        )}
+                    </div>
+                    </div>
+                )}
+                </li>
+            ))}
+            </ul>
+        )}
+        
+        {!loading && categories.length > 0 && (
+            <PaginationControl 
+                variant="table"
+                {...pagination} 
+            />
+        )}
        
       </div>
 
